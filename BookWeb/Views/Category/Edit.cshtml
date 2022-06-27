@@ -1,0 +1,42 @@
+﻿@model Category
+
+<form method="post" asp-action="Edit">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Редактировать категорию</h2>
+            <hr /> 
+        </div>
+        @*<div asp-validation-summary="All"></div>*@
+        <div class="mb-3">
+            <label asp-for="Name">Имя</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+         <div class="mb-3">
+            <label asp-for="CountObject">Количество целей</label>
+            <input asp-for="CountObject" class="form-control" /> 
+            <span asp-validation-for="CountObject" class="text-danger"></span>
+        </div>
+         <div class="mb-3">
+            <label asp-for="DisplayOrder">Текущая цель</label>
+            <input asp-for="DisplayOrder" class="form-control" /> 
+            <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+        </div>
+         <div class="mb-3">
+            <label asp-for="Progress">Прогресс</label>
+            <input asp-for="Progress" class="form-control" /> 
+            <span asp-validation-for="Progress" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Обновить</button>
+        <a asp-controller="Category" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Вернуться назад
+        </a>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
